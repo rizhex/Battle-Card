@@ -1,0 +1,6 @@
+/home/rizhe/Documents/Battle-Card/.mono/temp/bin/Tools/Battle-Card.dll
+/home/rizhe/Documents/Battle-Card/.mono/temp/bin/Tools/Battle-Card.pdb
+/home/rizhe/Documents/Battle-Card/.mono/temp/obj/Tools/Battle-Card.csproj.AssemblyReference.cache
+/home/rizhe/Documents/Battle-Card/.mono/temp/obj/Tools/Battle-Card.csproj.CoreCompileInputs.cache
+/home/rizhe/Documents/Battle-Card/.mono/temp/obj/Tools/Battle-Card.dll
+/home/rizhe/Documents/Battle-Card/.mono/temp/obj/Tools/Battle-Card.pdb

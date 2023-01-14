@@ -21,7 +21,6 @@ public class Menu : Node2D
         EmitSignal("StartGame");
     }
     public void _on_ManageButton_pressed(){
-        Hide();
         GetNode<AudioStreamPlayer>("ButtonSound").Play();
         EmitSignal("Manage");
     }
