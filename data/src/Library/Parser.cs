@@ -83,7 +83,7 @@ public class Parser
     {
         List<Power> answer = new List<Power>();
         string name;
-        if(!Stream.MoveNext(TokenType.identifier))throw new Exception("PowerSet name expected");
+        if(Stream.LookAhead().Type != TokenType.identifier) throw new Exception("PowerSet name expected");
         name = Stream.LookAhead().Value;
         if(!Stream.MoveNext(TokenValues.OpenCurlyBrackets)) throw new Exception("{ expected");
         Stream.MoveForward(1);
@@ -96,7 +96,7 @@ public class Parser
                 Stream.MoveForward(1);
             }
         }
-        if(!Stream.MoveNext(TokenValues.ClosedCurlyBrackets)) throw new Exception("} expected");
+        if(Stream.LookAhead().Value != TokenValues.ClosedCurlyBrackets) throw new Exception("} expected");
         return new PowerSet(name, answer);
     }
     // El metodo ParseConditionSet se encarga de parsear el conjunto de condiciones que contiene el poder, velando siempre
@@ -164,6 +164,7 @@ public class Parser
         Stream.MoveForward(1); 
         if (type == TokenValues.arithmeticexpression)
         {
+            Stream.MoveBackWard(1);
             answer = ParseArithmeticExpression();
         }  
         else if (type== TokenValues.booleanexpression)
@@ -187,9 +188,9 @@ public class Parser
     TextExpression ParseTextExpression()
     {
         TextExpression answer = null;
-        if (Stream.LookAhead().Type != TokenType.identifier) throw new Exception("ID expected");
+        if (Stream.LookAhead().Type != TokenType.identifier) throw new Exception($"ID expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
         answer = new TextExpression(Stream.LookAhead().Value);
-        if(!Stream.MoveNext(TokenValues.StatementSeparator)) throw new Exception("; expected");     
+        if(!Stream.MoveNext(TokenValues.StatementSeparator)) throw new Exception($"; expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");     
         return answer;
     }
     // El metodo ParseArithmeticExpression se encarga de parsear expresiones aritmeticas. El metodo realiza una prueba para ver
@@ -1256,10 +1257,14 @@ public class Parser
         while (Stream.MoveNext(TokenValues.arithmeticexpression)||Stream.MoveNext(TokenValues.booleanexpression)||Stream.MoveNext(TokenValues.textexpression)||Stream.MoveNext(TokenValues.powerset))
         {
             string expressiontype = Stream.LookAhead().Value;
-            if(!Stream.MoveNext(TokenType.properties)) throw new Exception("Property Expected");
+            if(expressiontype!=TokenValues.powerset)
+            {
+                System.Console.WriteLine(expressiontype);
+                if(!Stream.MoveNext(TokenType.properties)) throw new Exception($"Property Expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
+            }
             string property = Stream.LookAhead().Value;
-            if (Properties[property]) throw new Exception($"{property} has already been defined");
-            if (!Stream.MoveNext(TokenValues.assign)) throw new Exception("= expected");
+            if (Properties[property]) throw new Exception($"{property} has already been defined in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
+            if (expressiontype != TokenValues.powerset)if (!Stream.MoveNext(TokenValues.assign)) throw new Exception($"= expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
             switch (expressiontype)
             {
                 case TokenValues.arithmeticexpression:                
@@ -1267,15 +1272,18 @@ public class Parser
                 {
                     Damage = (ArithmeticExpressions)ParseExpression(expressiontype);
                     Properties[property] = true;
+                    if(!Stream.MoveNext(TokenValues.StatementSeparator)) throw new Exception("; expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
                 }
                 else
                 {
                     externalProperties.Add(((ArithmeticExpressions)ParseExpression(expressiontype)));
+                    if(!Stream.MoveNext(TokenValues.StatementSeparator)) throw new Exception("; expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
                 }
                 break;
 
                 case TokenValues.booleanexpression:
                 externalProperties.Add((BooleanExpresion)ParseExpression(expressiontype));
+                if(!Stream.MoveNext(TokenValues.StatementSeparator)) throw new Exception("; expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
                 break;
 
                 case TokenValues.textexpression:
@@ -1298,15 +1306,18 @@ public class Parser
                     {
                         case TokenValues.melee:
                         Position = Cards.location.Melee;
+                        Properties[property] = true;
                         break;
                         case TokenValues.middle:
                         Position = Cards.location.Middle;
+                        Properties[property] = true;
                         break;
                         case TokenValues.siege:
                         Position = Cards.location.Siege;
+                        Properties[property] = true;
                         break;
                         default:
-                        throw new Exception("Wrong Position");
+                        throw new Exception($"Wrong Position in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
                     }
                     break;
                     default:

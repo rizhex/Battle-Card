@@ -88,6 +88,7 @@ public class TokenStream
     }
     private void SetArithmeticOperators()
     {
+        ArithmeticOperators = new List<string>();
         ArithmeticOperators.Add(TokenValues.sum);
         ArithmeticOperators.Add(TokenValues.sub);
         ArithmeticOperators.Add(TokenValues.mult);

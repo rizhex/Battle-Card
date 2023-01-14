@@ -1,9 +1,10 @@
 UnitCard
 {
-    Name = "Alerie Hightower";
-    Type = UnitCard;
-    Path = "/band0/AlerieHightower.jpg";
-    Power "Support"
+    Text Name = "Allerie Hightower";
+    Text Path = "/band0/AlerieHightower.jpg";
+    PowerSet "La tanque"
+	{
+		Power "Support"
     {
         ConditionSet
         {
@@ -20,8 +21,9 @@ UnitCard
             }
         }
     }
-    Phrase = "Don't call me Mother. If I'd given birth to you, I'm sure I'd remember.";
-    Position = Melee;
-    Attack = 2;
+	}
+    Text Phrase = "Don't call me Mother. If I'd given birth to you, I'm sure I'd remember.";
+    Text Position = "Melee";
+    Number Attack = 2;
 }
 

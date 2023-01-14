@@ -21,12 +21,11 @@ scale = Vector2( 1.00001, 0.899968 )
 texture = ExtResource( 2 )
 
 [node name="CardEdit" type="TextEdit" parent="."]
-margin_left = 92.0
+margin_left = 81.0
 margin_top = 78.0
 margin_right = 1241.0
 margin_bottom = 775.0
 custom_fonts/font = SubResource( 1 )
-text = "sdasd"
 
 [node name="Cards" type="TextEdit" parent="."]
 margin_left = 1348.0
@@ -41,7 +40,6 @@ margin_top = 980.0
 margin_right = 976.0
 margin_bottom = 1025.0
 custom_fonts/font = SubResource( 1 )
-text = "sdasd"
 
 [node name="SaveButton" type="Button" parent="."]
 margin_left = 57.8336
