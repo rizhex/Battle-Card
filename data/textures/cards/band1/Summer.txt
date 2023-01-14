@@ -1,0 +1,30 @@
+UnitCard
+{
+	Name = "Summer";
+	Type = UnitCard;
+	Path = "/band1/Summer.jpg";
+	Power "Master Support"
+	{
+		ConditionSet
+		{
+			Condition
+			{
+				ExistCardIn(Card "Bran Stark", AllOwnCards)
+			}
+		}
+		InstructionSet
+		{
+			Instruction
+			{
+				ModifyAttack(5, Card "Bran Stark")	
+			}
+			Instruction
+			{
+				ModifyAttack(5, Card "Summer")	
+			}
+		}
+	}
+	Phrase = "Winter is coming";
+	Position = Siege;
+	Attack = 10;
+}

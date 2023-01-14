@@ -1,0 +1,20 @@
+UnitCard
+{
+    Name = "Daario Naharis";
+    Type = UnitCard;
+    Path = "/band0/DaarioNaharis.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "I'm the simplest man you'll ever meet. I only do what I want to do.";
+    Position = Melee;
+    Attack = 10;
+}

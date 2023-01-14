@@ -1,0 +1,21 @@
+UnitCard
+{
+    Name = "Benjen Stark";
+    Type = UnitCard;
+    Path = "/band1/BenjenStark.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "This is not Winterfell', he told him as he cut his meat with fork and dagger.";
+    Position = Melee;
+    Attack = 8;
+}
+

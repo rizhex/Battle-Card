@@ -1,0 +1,24 @@
+UnitCard
+{
+    Name = "Theon Greyjoy";
+    Type = UnitCard;
+    Path = "/band0/TheonGreyjoy.jpg";
+    Power "CardChange"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                Draw(1)
+            }
+        }
+    }
+    Phrase = "Only a fool humbles himself when the world is so full of men willing to do the job for him.";
+    Position = Melee;
+    Attack = 1;
+}
+

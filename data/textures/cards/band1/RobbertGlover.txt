@@ -1,0 +1,21 @@
+UnitCard
+{
+    Name = "Robbert Glover";
+    Type = UnitCard;
+    Path = "/band1/RobbertGlover.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "You're asking me to join your army. Who is fighting in this army?.";
+    Position = Melee;
+    Attack = 7;
+}
+

@@ -1,0 +1,34 @@
+LeaderCard
+{
+    Name = "Jon Snow";
+    Type = LeaderCard;
+    Path = "/band1/JonSnow.jpg";
+    Power "NeedHelp"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        	Instruction
+			{
+				Summon(Card "Ghost")
+			}
+			Instruction
+			{
+				Summon(Card "Nimerya")
+			}
+			Instruction
+			{
+				Summon(Card "Lady")
+			}
+			Instruction
+			{
+				Summon(Card "Summer")
+			}
+        }
+    }
+    Phrase = "You All Crowned Me Your King. I Never Wanted It...";
+}
+

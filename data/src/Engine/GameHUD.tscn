@@ -1,0 +1,606 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://data/src/Engine/GameHUD.cs" type="Script" id=1]
+[ext_resource path="res://data/src/Engine/CardBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://data/textures/board/board.png" type="Texture" id=3]
+[ext_resource path="res://data/font/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://data/textures/cards/band0/backDaenerys.jpg" type="Texture" id=5]
+[ext_resource path="res://data/textures/board/runes2.png" type="Texture" id=6]
+[ext_resource path="res://data/textures/board/runes1.png" type="Texture" id=7]
+[ext_resource path="res://data/textures/board/runes0.png" type="Texture" id=8]
+[ext_resource path="res://data/textures/cards/band0/Daenerys.jpg" type="Texture" id=9]
+[ext_resource path="res://data/textures/cards/band1/JonSnow.jpg" type="Texture" id=10]
+[ext_resource path="res://data/textures/board/VictorySign.jpg" type="Texture" id=11]
+[ext_resource path="res://data/sound/button.wav" type="AudioStream" id=12]
+[ext_resource path="res://data/sound/selectdeck.wav" type="AudioStream" id=13]
+[ext_resource path="res://data/sound/victory.wav" type="AudioStream" id=14]
+[ext_resource path="res://data/sound/defeat.wav" type="AudioStream" id=15]
+[ext_resource path="res://data/textures/cards/band0/front.jpg" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 45
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 250
+font_data = ExtResource( 4 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 150
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 75
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 80
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 50
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 100
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 50
+font_data = ExtResource( 4 )
+
+[node name="GameHUD" type="Node2D"]
+script = ExtResource( 1 )
+CardScene = ExtResource( 2 )
+
+[node name="BackGround" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1005.39, 539.586 )
+scale = Vector2( 1.07073, 0.935698 )
+texture = ExtResource( 3 )
+
+[node name="PassButton" type="Button" parent="BackGround"]
+margin_left = -684.001
+margin_top = 410.778
+margin_right = -592.001
+margin_bottom = 447.778
+custom_fonts/font = SubResource( 1 )
+text = "Pass"
+
+[node name="ExitButton" type="Button" parent="BackGround"]
+margin_left = -684.68
+margin_top = 468.112
+margin_right = -592.68
+margin_bottom = 505.112
+custom_fonts/font = SubResource( 1 )
+text = "Menu"
+
+[node name="PlayerSiege" type="Label" parent="BackGround"]
+margin_left = -394.584
+margin_top = 239.708
+margin_right = -330.584
+margin_bottom = 295.708
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="PlayerMiddle" type="Label" parent="BackGround"]
+margin_left = -395.854
+margin_top = 85.8155
+margin_right = -331.854
+margin_bottom = 140.815
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="PlayerMelee" type="Label" parent="BackGround"]
+margin_left = -395.854
+margin_top = -60.9925
+margin_right = -331.854
+margin_bottom = -5.99249
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="PlayerTotal" type="Label" parent="BackGround"]
+margin_left = -643.453
+margin_top = 220.893
+margin_right = -575.453
+margin_bottom = 281.893
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="PlayerCards" type="Label" parent="BackGround"]
+margin_left = -643.453
+margin_top = 139.803
+margin_right = -575.453
+margin_bottom = 200.803
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="EnemyMelee" type="Label" parent="BackGround"]
+margin_left = -398.125
+margin_top = -212.347
+margin_right = -334.125
+margin_bottom = -157.347
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="EnemyMiddle" type="Label" parent="BackGround"]
+margin_left = -397.313
+margin_top = -356.885
+margin_right = -333.313
+margin_bottom = -301.885
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="EnemySiege" type="Label" parent="BackGround"]
+margin_left = -398.584
+margin_top = -501.785
+margin_right = -334.584
+margin_bottom = -446.785
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="EnemyTotal" type="Label" parent="BackGround"]
+margin_left = -644.469
+margin_top = -261.647
+margin_right = -572.469
+margin_bottom = -200.647
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="EnemyCards" type="Label" parent="BackGround"]
+margin_left = -646.197
+margin_top = -338.781
+margin_right = -574.197
+margin_bottom = -277.781
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="PlayerBackDeck" type="Sprite" parent="BackGround"]
+position = Vector2( 733.935, 419.761 )
+scale = Vector2( 0.223267, 0.17392 )
+texture = ExtResource( 5 )
+
+[node name="Count" type="Label" parent="BackGround/PlayerBackDeck"]
+margin_left = -163.872
+margin_top = 250.979
+margin_right = 192.128
+margin_bottom = 551.979
+custom_fonts/font = SubResource( 3 )
+text = "0"
+
+[node name="EnemyBackDeck" type="Sprite" parent="BackGround"]
+position = Vector2( 735.663, -408.596 )
+scale = Vector2( 0.223267, 0.17392 )
+texture = ExtResource( 5 )
+
+[node name="Count" type="Label" parent="BackGround/EnemyBackDeck"]
+margin_left = -163.872
+margin_top = 250.979
+margin_right = 192.128
+margin_bottom = 551.979
+custom_fonts/font = SubResource( 3 )
+text = "0"
+
+[node name="PlayerLife" type="AnimatedSprite" parent="BackGround"]
+position = Vector2( -609.734, 327.379 )
+frames = SubResource( 4 )
+animation = "0"
+
+[node name="EnemyLife" type="AnimatedSprite" parent="BackGround"]
+position = Vector2( -613.113, -150.72 )
+frames = SubResource( 4 )
+animation = "0"
+
+[node name="Hand0" type="Position2D" parent="."]
+position = Vector2( 450, 910 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="Hand1" type="Position2D" parent="."]
+position = Vector2( 1550, 910 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="Climate0" type="Position2D" parent="."]
+position = Vector2( 100, 480 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="Climate1" type="Position2D" parent="."]
+position = Vector2( 350, 480 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportPlayerSiege0" type="Position2D" parent="."]
+position = Vector2( 450, 733.868 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportPlayerSiege1" type="Position2D" parent="."]
+position = Vector2( 600, 733.868 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportPlayerMiddle0" type="Position2D" parent="."]
+position = Vector2( 450, 593.572 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportPlayerMiddle1" type="Position2D" parent="."]
+position = Vector2( 600, 593.572 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportPlayerMelee0" type="Position2D" parent="."]
+position = Vector2( 450, 464.968 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportPlayerMelee1" type="Position2D" parent="."]
+position = Vector2( 600, 464.968 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportEnemyMelee0" type="Position2D" parent="."]
+position = Vector2( 450, 319.662 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportEnemyMelee1" type="Position2D" parent="."]
+position = Vector2( 600, 319.662 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportEnemyMiddle0" type="Position2D" parent="."]
+position = Vector2( 450, 181.037 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportEnemyMiddle1" type="Position2D" parent="."]
+position = Vector2( 600, 181.037 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportEnemySiege0" type="Position2D" parent="."]
+position = Vector2( 450, 40.741 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="SupportEnemySiege1" type="Position2D" parent="."]
+position = Vector2( 450, 40.741 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerSiege0" type="Position2D" parent="."]
+position = Vector2( 700, 730 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerSiege1" type="Position2D" parent="."]
+position = Vector2( 1600, 730 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerMiddle0" type="Position2D" parent="."]
+position = Vector2( 700, 590 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerMiddle1" type="Position2D" parent="."]
+position = Vector2( 1600, 590 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerMelee0" type="Position2D" parent="."]
+position = Vector2( 700, 455 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerMelee1" type="Position2D" parent="."]
+position = Vector2( 1600, 455 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerGrave0" type="Position2D" parent="."]
+position = Vector2( 50, 700 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerGrave1" type="Position2D" parent="."]
+position = Vector2( 150, 700 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerLeader0" type="Position2D" parent="."]
+position = Vector2( 100, 900 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="PlayerLeader1" type="Position2D" parent="."]
+position = Vector2( 230, 900 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemyMelee0" type="Position2D" parent="."]
+position = Vector2( 700, 315 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemyMelee1" type="Position2D" parent="."]
+position = Vector2( 1600, 315 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemyMiddle0" type="Position2D" parent="."]
+position = Vector2( 700, 175 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemyMiddle1" type="Position2D" parent="."]
+position = Vector2( 1600, 175 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemySiege0" type="Position2D" parent="."]
+position = Vector2( 700, 30 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemySiege1" type="Position2D" parent="."]
+position = Vector2( 1600, 30 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemyGrave0" type="Position2D" parent="."]
+position = Vector2( 50, 250 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemyGrave1" type="Position2D" parent="."]
+position = Vector2( 150, 250 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemyLeader0" type="Position2D" parent="."]
+position = Vector2( 100, 70 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="EnemyLeader1" type="Position2D" parent="."]
+position = Vector2( 230, 70 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="CardSelection0" type="Position2D" parent="."]
+position = Vector2( 600, 720 )
+
+[node name="CardSelection1" type="Position2D" parent="."]
+position = Vector2( 1600, 720 )
+
+[node name="PlayerHand0" type="Position2D" parent="."]
+position = Vector2( 500, -65 )
+
+[node name="PlayerHand1" type="Position2D" parent="."]
+position = Vector2( 1600, -65 )
+
+[node name="Cards" type="Node2D" parent="."]
+
+[node name="DeckSelection" type="Node2D" parent="."]
+position = Vector2( 450, 733.868 )
+scale = Vector2( 1.26278, 1.10444 )
+
+[node name="Title" type="Label" parent="DeckSelection"]
+margin_left = -32.7204
+margin_top = -607.954
+margin_right = 884.28
+margin_bottom = -426.954
+custom_fonts/font = SubResource( 5 )
+text = "Pick a Deck"
+
+[node name="Band0Button" type="TextureButton" parent="DeckSelection"]
+margin_left = -0.0947266
+margin_top = -389.577
+margin_right = 398.905
+margin_bottom = 178.423
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="Band1Button" type="TextureButton" parent="DeckSelection"]
+margin_left = 467.714
+margin_top = -387.411
+margin_right = 866.714
+margin_bottom = 180.589
+texture_normal = ExtResource( 10 )
+expand = true
+
+[node name="DisplayInfo" type="Sprite" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 1028.97, 528.033 )
+texture = ExtResource( 11 )
+
+[node name="Title" type="Label" parent="DisplayInfo"]
+margin_left = -361.0
+margin_top = -339.0
+margin_right = 357.0
+margin_bottom = -203.0
+custom_fonts/font = SubResource( 6 )
+text = "Round Finished"
+align = 1
+valign = 1
+
+[node name="SubTitle" type="Label" parent="DisplayInfo"]
+margin_left = -256.0
+margin_top = -69.0
+margin_right = 246.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 6 )
+align = 1
+valign = 1
+
+[node name="Results" type="Label" parent="DisplayInfo"]
+margin_left = -258.105
+margin_top = 106.79
+margin_right = 242.895
+margin_bottom = 203.79
+custom_fonts/font = SubResource( 6 )
+text = "\\"
+align = 1
+valign = 1
+
+[node name="NextButton" type="Button" parent="DisplayInfo"]
+margin_left = -484.0
+margin_top = 263.0
+margin_right = -130.0
+margin_bottom = 358.0
+custom_fonts/font = SubResource( 7 )
+text = "Next"
+
+[node name="GiveUpButton" type="Button" parent="DisplayInfo"]
+margin_left = 12.0
+margin_top = 261.0
+margin_right = 469.0
+margin_bottom = 356.0
+custom_fonts/font = SubResource( 7 )
+text = "Next"
+
+[node name="Info" type="Sprite" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="Text" type="Label" parent="Info"]
+margin_left = 615.733
+margin_top = 388.525
+margin_right = 1461.73
+margin_bottom = 585.525
+custom_fonts/font = SubResource( 8 )
+text = "asdasd"
+align = 1
+valign = 1
+
+[node name="ChangeEnemyTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="SelectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="VictorySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="DefeatSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="SiegeSupport" type="TextureButton" parent="."]
+margin_left = 447.0
+margin_top = 728.0
+margin_right = 575.0
+margin_bottom = 841.0
+
+[node name="MiddleSupport" type="TextureButton" parent="."]
+margin_left = 448.715
+margin_top = 589.105
+margin_right = 576.715
+margin_bottom = 702.105
+
+[node name="MeleeSupport" type="TextureButton" parent="."]
+margin_left = 449.942
+margin_top = 452.826
+margin_right = 577.942
+margin_bottom = 565.826
+
+[node name="ShowCard" type="Node2D" parent="."]
+
+[node name="Card" type="MarginContainer" parent="ShowCard"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BackGround" type="Sprite" parent="ShowCard/Card"]
+position = Vector2( 1771.05, 534.83 )
+scale = Vector2( 0.438511, 0.381564 )
+texture = ExtResource( 16 )
+
+[node name="PhotoMark" type="MarginContainer" parent="ShowCard/Card/BackGround"]
+margin_left = -297.0
+margin_top = -559.0
+margin_right = 300.0
+margin_bottom = 108.0
+
+[node name="Photo" type="Sprite" parent="ShowCard/Card/BackGround/PhotoMark"]
+position = Vector2( 298, 333 )
+
+[node name="Name" type="Label" parent="ShowCard/Card/BackGround"]
+margin_left = -292.0
+margin_top = 19.0
+margin_right = 289.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 9 )
+align = 1
+valign = 1
+
+[node name="Phrase" type="RichTextLabel" parent="ShowCard/Card/BackGround"]
+margin_left = -295.0
+margin_top = 189.0
+margin_right = 295.0
+margin_bottom = 500.0
+custom_fonts/normal_font = SubResource( 10 )
+
+[node name="Attack" type="Label" parent="ShowCard/Card/BackGround"]
+margin_left = -281.96
+margin_top = -546.377
+margin_right = -167.96
+margin_bottom = -449.377
+custom_fonts/font = SubResource( 11 )
+
+[node name="Place" type="Label" parent="ShowCard/Card/BackGround"]
+margin_left = -290.0
+margin_top = 125.0
+margin_right = 291.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 12 )
+align = 1
+
+[node name="Power" type="Label" parent="ShowCard/Card/BackGround"]
+margin_left = -285.884
+margin_top = 503.443
+margin_right = 295.116
+margin_bottom = 564.443
+custom_fonts/font = SubResource( 12 )
+align = 1
+valign = 2
+
+[connection signal="pressed" from="BackGround/PassButton" to="." method="_on_PassButton_pressed"]
+[connection signal="pressed" from="BackGround/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="DeckSelection/Band0Button" to="." method="_on_Band0Button_pressed"]
+[connection signal="pressed" from="DeckSelection/Band1Button" to="." method="_on_Band1Button_pressed"]
+[connection signal="pressed" from="DisplayInfo/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="DisplayInfo/GiveUpButton" to="." method="_on_GiveUpButton_pressed"]
+[connection signal="timeout" from="ChangeEnemyTimer" to="." method="_on_ChangeEnemyTimer_timeout"]
+[connection signal="pressed" from="SiegeSupport" to="." method="_on_SiegeSupport_pressed"]
+[connection signal="pressed" from="MiddleSupport" to="." method="_on_MiddleSupport_pressed"]
+[connection signal="pressed" from="MeleeSupport" to="." method="_on_MeleeSupport_pressed"]

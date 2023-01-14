@@ -1,0 +1,43 @@
+LeaderCard
+{
+    Name = "Daenerys Targaryen";
+    Type = LeaderCard;
+    Path = "/band0/Daenerys.jpg";
+    Power "DragonCommand"
+    {
+        ConditionSet
+        {
+            Condition
+            {
+                ExistCardIn(Card "Drogon", AllExistingCards)   
+            }
+			Condition
+            {
+                ExistCardIn(Card "Rhaegal", AllExistingCards)   
+            }
+			Condition
+            {
+                ExistCardIn(Card "Viserion", AllExistingCards)   
+            }
+			
+			
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                Destroy(EnemyMelee)         
+            }
+            Instruction
+            {
+                Destroy(EnemySiege)
+            }
+            Instruction
+            {
+                Destroy(EnemyMiddle)
+            }
+        }
+    }
+    Phrase = "I will take what is mine with fire and boold.";
+}
+

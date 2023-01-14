@@ -1,0 +1,21 @@
+UnitCard
+{
+    Name = "Tormund Giantsbane";
+    Type = UnitCard;
+    Path = "/band1/TormundGiantsbane.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "Don't panic, boy. This isn't the damned Night's Watch.";
+    Position = Melee;
+    Attack = 15;
+}
+

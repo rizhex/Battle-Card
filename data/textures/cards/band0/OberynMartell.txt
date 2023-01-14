@@ -1,0 +1,21 @@
+UnitCard
+{
+    Name = "Oberyn Martell";
+    Type = UnitCard;
+    Path = "/band0/OberynMartell.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "Someday, if you're lucky, you will wake up and realize you are old.";
+    Position = Melee;
+    Attack = 12;
+}
+

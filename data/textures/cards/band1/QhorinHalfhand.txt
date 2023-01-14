@@ -1,0 +1,22 @@
+UnitCard
+{
+    Name = "Qhorin Halfhand";
+    Type = UnitCard;
+    Path = "/band1/QhorinHalfhand.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "We are the watchers on the wall.";
+    Position = Melee;
+    Attack = 15;
+}
+
+

@@ -1,0 +1,27 @@
+UnitCard
+{
+    Name = "Alerie Hightower";
+    Type = UnitCard;
+    Path = "/band0/AlerieHightower.jpg";
+    Power "Support"
+    {
+        ConditionSet
+        {
+            Condition
+            {
+                Compare(NumberOfCardsIn(OwnMelee), 0, >)    
+            }
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                ModifyAttack(2, OwnMelee)   
+            }
+        }
+    }
+    Phrase = "Don't call me Mother. If I'd given birth to you, I'm sure I'd remember.";
+    Position = Melee;
+    Attack = 2;
+}
+

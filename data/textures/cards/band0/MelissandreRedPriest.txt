@@ -1,0 +1,27 @@
+UnitCard
+{
+    Name = "Melissandre";
+    Type = UnitCard;
+    Path = "/band0/MelissandreRedPriest.jpg";
+    Power "Resurrect"
+    {
+        ConditionSet
+        {
+            Condition
+            {
+                Compare(NumberOfCardsIn(OwnGraveryard), 0, >)
+            }
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                Reborn(OwnGraveryard, 1)
+            }
+        }
+    }
+    Phrase = "Death by fire is the purest death.";
+    Position = Middle;
+    Attack = 7;
+}
+

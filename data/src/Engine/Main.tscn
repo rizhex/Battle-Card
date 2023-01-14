@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://data/src/Engine/Main.cs" type="Script" id=1]
+[ext_resource path="res://data/src/Engine/GameHUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://data/src/Engine/Menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://data/src/Engine/Manage.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="GameHUD" parent="." instance=ExtResource( 2 )]
+
+[node name="Menu" parent="." instance=ExtResource( 3 )]
+
+[node name="Manage" parent="." instance=ExtResource( 4 )]
+
+[connection signal="Manage" from="Menu" to="Manage" method="_on_Menu_Manage"]
+[connection signal="StartGame" from="Menu" to="GameHUD" method="_on_Menu_StartGame"]

@@ -1,0 +1,21 @@
+UnitCard
+{
+    Name = "Tyrell Soldier";
+    Type = UnitCard;
+    Path = "/band0/TyrellSoldier.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "Grow strong.";
+    Position = Melee;
+    Attack = 4;
+}
+

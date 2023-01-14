@@ -1,0 +1,27 @@
+UnitCard
+{
+    Name = "Aemon Targaryen";
+    Type = UnitCard;
+    Path = "/band1/AemonTargaryen.jpg";
+    Power "Support"
+    {
+        ConditionSet
+        {
+            Condition
+            {
+                Compare(NumberOfCardsIn(OwnMelee), 0, >)    
+            }
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                ModifyAttack(2, OwnMelee)   
+            }
+        }
+    }
+    Phrase = "It is hard to be so old, and harder still to be so blind. I miss the sun. And books. I miss the books most of all";
+    Position = Melee;
+    Attack = 0;
+}
+

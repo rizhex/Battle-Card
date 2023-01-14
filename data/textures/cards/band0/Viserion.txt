@@ -1,0 +1,21 @@
+UnitCard
+{
+    Name = "Viserion";
+    Type = UnitCard;
+    Path = "/band0/Viserion.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "Dracarys!";
+    Position = Siege;
+    Attack = 15;
+}
+

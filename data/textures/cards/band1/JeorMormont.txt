@@ -1,0 +1,21 @@
+UnitCard
+{
+    Name = "Jeor Mormont";
+    Type = UnitCard;
+    Path = "/band1/JeorMormont.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "You want to lead one day? Then learn how to follow.";
+    Position = Melee;
+    Attack = 9;
+}
+

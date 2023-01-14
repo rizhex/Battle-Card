@@ -1,0 +1,22 @@
+UnitCard
+{
+    Name =  "Yoren";
+    Type = UnitCard;
+    Path ="/band1/Yoren.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "People worry so much about their throats, that they forget about what's down low.";
+    Position = Melee;
+    Attack = 9;
+}
+
+

@@ -1,0 +1,27 @@
+UnitCard
+{
+    Name = "Samwell Tarly";
+    Type = UnitCard;
+    Path = "/band1/SamwellTarly.jpg";
+    Power "Support"
+    {
+        ConditionSet
+        {
+            Condition
+            {
+                Compare(NumberOfCardsIn(OwnMelee), 0, >)    
+            }
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                ModifyAttack(2, OwnMelee)   
+            }
+        }
+    }
+    Phrase = "Maybe The Decision About What's Best For Everyone Should Be Left To... Well, Everyone";
+    Position = Melee;
+    Attack = 3;
+}
+

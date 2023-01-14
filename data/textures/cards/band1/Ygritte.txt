@@ -1,0 +1,22 @@
+UnitCard
+{
+    Name =  "Ygritte";
+    Type = UnitCard;
+    Path = "/band1/Ygritte.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "Jon Snow, is this a proper castle now? Not just a tower?.";
+    Position = Middle;
+    Attack = 8;
+}
+
+

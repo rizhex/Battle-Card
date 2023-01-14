@@ -1,0 +1,22 @@
+UnitCard
+{
+    Name = "Drogon";
+    Type = UnitCard;
+    Path = "/band0/Drogon.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "Dracarys!";
+    Position = Siege;
+    Attack = 15;
+}
+
+

@@ -1,0 +1,24 @@
+UnitCard
+{
+    Name = "Jorah Mormont";
+    Type = UnitCard;
+    Path = "/band0/JorahMormont.jpg";
+    Power "Kill Bran"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                Destroy(Card "Bran Stark")
+            }
+        }
+    }
+    Phrase = "Don't ask me to stand aside as you climb on that pyre. I won't watch you burn.";
+    Position = Melee;
+    Attack = 6;
+}
+

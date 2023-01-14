@@ -1,0 +1,46 @@
+UnitCard
+{
+	Name = "Ghost";
+	Type = UnitCard;
+	Path = "/band1/Ghost.jpg";
+	Power "Winter is here"
+	{
+		ConditionSet
+		{
+			Condition
+            {
+                ExistCardIn(Card "Lady", AllOwnCards)   
+            }
+			Condition
+            {
+                ExistCardIn(Card "Summer", AllOwnCards)   
+            }
+			Condition
+            {
+                ExistCardIn(Card "Nimerya", AllOwnCards)   
+            }
+		}
+		InstructionSet
+		{
+			Instruction
+			{
+				ModifyAttack(5, Card "Ghost")	
+			}
+			Instruction
+			{
+				ModifyAttack(5, Card "Lady")	
+			}
+			Instruction
+			{
+				ModifyAttack(5, Card "Summer")	
+			}
+			Instruction
+			{
+				ModifyAttack(5, Card "Nimerya")	
+			}
+		}
+	}
+	Phrase = "Winter is coming";
+	Position = Siege;
+	Attack = 10;
+}

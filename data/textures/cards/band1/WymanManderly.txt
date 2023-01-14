@@ -1,0 +1,22 @@
+UnitCard
+{
+    Name = " Wyman Manderly";
+    Type = UnitCard;
+    Path = "/band1/WymanManderly.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase =" I am fat, and many think that makes me weak and foolish.";
+    Position = Middle;
+    Attack = 7;
+}
+
+

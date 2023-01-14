@@ -1,0 +1,27 @@
+EffectCard
+{
+    Name = "Fog1";
+    Type = EffectCard;
+    Path = "/band1/Fog1.jpg";
+    Power "ReduceDamage"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                ModifyAttack(-4, OwnMiddle)
+            }
+            Instruction
+            {
+                ModifyAttack(-4, EnemyMiddle)
+            }
+        }
+    }
+    Position = Weather;
+}
+
+

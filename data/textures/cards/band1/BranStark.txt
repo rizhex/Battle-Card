@@ -1,0 +1,25 @@
+UnitCard
+{
+    Name = "Bran Stark";
+    Type = UnitCard;
+    Path = "/band1/BranStark.jpg";
+    Power "Resurrection"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                Reborn(OwnGraveryard, 1)                
+            }
+        }
+    }
+    Phrase = "Why do you think I came all this way?.";
+    Position = Melee;
+    Attack = 0;
+}
+
+

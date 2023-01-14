@@ -1,0 +1,30 @@
+UnitCard
+{
+	Name = "Lady";
+	Type = UnitCard;
+	Path = "/band1/Lady.jpg";
+	Power "Master Support"
+	{
+		ConditionSet
+		{
+			Condition
+			{
+				ExistCardIn(Card "Sansa Stark", AllOwnCards)
+			}
+		}
+		InstructionSet
+		{
+			Instruction
+			{
+				ModifyAttack(5, Card "Sansa Stark")	
+			}
+			Instruction
+			{
+				ModifyAttack(5, Card "Lady")	
+			}
+		}
+	}
+	Phrase = "Winter is coming";
+	Position = Siege;
+	Attack = 10;
+}

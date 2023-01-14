@@ -1,0 +1,30 @@
+UnitCard
+{
+	Name = "Nimerya";
+	Type = UnitCard;
+	Path = "/band1/Nimerya.jpg";
+	Power "Master Support"
+	{
+		ConditionSet
+		{
+			Condition
+			{
+				ExistCardIn(Card "Arya Stark", AllOwnCards)
+			}
+		}
+		InstructionSet
+		{
+			Instruction
+			{
+				ModifyAttack(5, Card "Arya Stark")	
+			}
+			Instruction
+			{
+				ModifyAttack(5, Card "Nimerya")	
+			}
+		}
+	}
+	Phrase = "Winter is coming";
+	Position = Siege;
+	Attack = 10;
+}

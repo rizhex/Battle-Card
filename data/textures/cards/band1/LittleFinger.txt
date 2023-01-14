@@ -1,0 +1,29 @@
+UnitCard
+{
+    Name = "LittleFinger";
+    Type = UnitCard;
+    Path = "/band1/LittleFinger.jpg";
+    Power "Spy"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                SwitchBand(Card "LittleFinger")
+            }
+            Instruction
+            {
+                Draw(2)
+            }
+        }
+    }
+    Phrase = "Always Keep Your Foes Confused...";
+    Position = Melee;
+    Attack = 0;
+}
+
+

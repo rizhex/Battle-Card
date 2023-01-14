@@ -1,0 +1,28 @@
+UnitCard
+{
+    Name = "Asha Greyjoy";
+    Type = UnitCard;
+    Path = "/band0/AshaGreyjoy.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                ModifyAttack(4, 1)
+            }
+            Instruction
+            {
+                ModifyAttack(4, Card "Tyrion Lannister")
+            }
+        }
+    }
+    Phrase = "Yes, I am Asha of the Greyjoy House, although not everyone agrees with the lady.";
+    Position = Melee;
+    Attack = 7;
+}
+

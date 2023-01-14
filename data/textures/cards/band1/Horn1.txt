@@ -1,0 +1,23 @@
+EffectCard
+{
+    Name = "Horn1";
+    Type = EffectCard;
+    Path = "/band1/Horn1.jpg";
+    Power "Moral support"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                ModifyAttack(5, FreeElection)
+            }
+        }
+    }
+    Position = Support;
+}
+
+

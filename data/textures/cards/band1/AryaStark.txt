@@ -1,0 +1,21 @@
+UnitCard
+{
+    Name = "Arya Stark";
+    Type = UnitCard;
+    Path = "/band1/AryaStark.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "I Know Death. He's Got Many Faces. I Look Forward To Seeing This One.";
+    Position = Melee;
+    Attack = 10;
+}
+

@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://data/src/Engine/CardBase.cs" type="Script" id=1]
+[ext_resource path="res://data/font/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://data/sound/button.wav" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 150
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 80
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="CardBase" type="MarginContainer"]
+margin_right = 103.0
+margin_bottom = 136.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BackGround" type="Sprite" parent="."]
+position = Vector2( 51.5, 68 )
+scale = Vector2( 1.16615, 1 )
+
+[node name="PhotoMark" type="MarginContainer" parent="BackGround"]
+margin_left = -292.0
+margin_top = -557.0
+margin_right = 299.0
+margin_bottom = 105.0
+
+[node name="Photo" type="Sprite" parent="BackGround/PhotoMark"]
+position = Vector2( 295.5, 331 )
+
+[node name="Name" type="Label" parent="BackGround"]
+margin_left = -294.0
+margin_top = 30.0
+margin_right = 297.0
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 1 )
+text = "Daenerys Targaryen"
+align = 1
+
+[node name="Power" type="Label" parent="BackGround"]
+margin_left = -294.841
+margin_top = 477.86
+margin_right = 287.159
+margin_bottom = 547.86
+custom_fonts/font = SubResource( 1 )
+text = "Daenerys Targaryen"
+align = 1
+
+[node name="Phrase" type="RichTextLabel" parent="BackGround"]
+margin_left = -287.0
+margin_top = 227.0
+margin_right = 295.0
+margin_bottom = 472.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "texto generico generico generico geenerico geenerico generigco gnenrciosoj"
+
+[node name="Attack" type="Label" parent="BackGround"]
+margin_left = -283.0
+margin_top = -551.0
+margin_right = -160.0
+margin_bottom = -423.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "12"
+align = 1
+
+[node name="Place" type="Label" parent="BackGround"]
+margin_left = -272.909
+margin_top = 135.032
+margin_right = 278.091
+margin_bottom = 232.032
+custom_fonts/font = SubResource( 4 )
+align = 1
+
+[node name="ActionButton" type="TextureButton" parent="."]
+margin_right = 103.0
+margin_bottom = 136.0
+button_mask = 3
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="pressed" from="ActionButton" to="." method="_on_ActionButton_pressed"]

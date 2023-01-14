@@ -1,0 +1,22 @@
+UnitCard
+{
+    Name = "Davos Seaworth";
+    Type = UnitCard;
+    Path = "/band1/DavosSeaworth.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "An admiral without ships, a hand without fingers, in service of a king without a throne.";
+    Position = Melee;
+    Attack = 7;
+}
+
+

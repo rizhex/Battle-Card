@@ -1,0 +1,28 @@
+UnitCard
+{
+    Name = "Dothraki Soldier2";
+    Type = UnitCard;
+    Path = "/band0/DothrakiSoldier2.jpg";
+    Power "Assistance"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                Summon(Card "Dothraki Soldier0")
+            }
+            Instruction
+            {
+                Summon(Card "Dothraki Soldier1")
+            }
+        }
+    }
+    Phrase = "Fichas jahakes moon!.";
+    Position = Melee;
+    Attack = 5;
+}
+

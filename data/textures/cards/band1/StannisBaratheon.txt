@@ -1,0 +1,21 @@
+UnitCard
+{
+    Name = "Stannis Baratheon";
+    Type = UnitCard;
+    Path = "/band1/StannisBaratheon.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "We march to victory or we march to defeat. But we go forward. Only forward.";
+    Position = Melee;
+    Attack = 6;
+}
+

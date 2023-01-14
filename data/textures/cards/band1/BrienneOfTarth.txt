@@ -1,0 +1,22 @@
+UnitCard
+{
+    Name = "Brienne of Tarth";
+    Type = UnitCard;
+    Path = "/band1/BrienneOfTarth.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "I, Brienne Of Tarth, Sentence You To Die. Do You Have Any Last Words?.";
+    Position = Melee;
+    Attack = 8;
+}
+
+

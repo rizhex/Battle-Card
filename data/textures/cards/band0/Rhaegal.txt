@@ -1,0 +1,22 @@
+UnitCard
+{
+    Name = "Rhaegal";
+    Type = UnitCard;
+    Path = "/band0/Rhaegal.jpg";
+    Power "None"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+        
+        }
+    }
+    Phrase = "Dracarys!";
+    Position = Siege;
+    Attack = 15;
+}
+
+

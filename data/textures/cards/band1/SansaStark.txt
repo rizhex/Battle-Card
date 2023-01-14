@@ -1,0 +1,27 @@
+UnitCard
+{
+    Name = "Sansa Stark";
+    Type = UnitCard;
+    Path = "/band1/SansaStark.jpg";
+    Power "Support"
+    {
+        ConditionSet
+        {
+            Condition
+            {
+                Compare(NumberOfCardsIn(OwnMiddle), 0, >)    
+            }
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                ModifyAttack(2, OwnMiddle)   
+            }
+        }
+    }
+    Phrase = "I am Sansa Stark of Winterfell. This is my home, and you can't frighten me.";
+    Position = Middle;
+    Attack = 3;
+}
+

@@ -1,0 +1,32 @@
+UnitCard
+{
+    Name = "Varys";
+    Type = UnitCard;
+    Path = "/band0/Varys.jpg";
+    Power "Spy"
+    {
+        ConditionSet
+        {
+            
+        }
+        InstructionSet
+        {
+            Instruction
+            {
+                SwitchBand(Card "Varys")
+            }
+            Instruction
+            {
+                Draw(2)
+            }
+            Instruction
+            {
+                Reborn(OwnGraveryard, Card "Tyrion Lannister")
+            }
+        }
+    }
+    Phrase = "You wish to know where my true loyalties lie? Not with any king or queen, but with the people.";
+    Position = Middle;
+    Attack = 0;
+}
+
