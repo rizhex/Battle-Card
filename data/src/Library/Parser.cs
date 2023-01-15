@@ -1269,7 +1269,7 @@ public class Parser
             {
                 case TokenValues.arithmeticexpression:                
                 if (property == TokenValues.attack)
-                {
+                { 
                     Damage = (ArithmeticExpressions)ParseExpression(expressiontype);
                     Properties[property] = true;
                     if(!Stream.MoveNext(TokenValues.StatementSeparator)) throw new Exception("; expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
