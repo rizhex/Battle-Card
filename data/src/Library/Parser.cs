@@ -1240,7 +1240,7 @@ public class Parser
         string Phrase = "";
         Cards.location Position = Cards.location.Melee;
         ArithmeticExpressions Damage = null;
-        Dictionary<string, Expression> externalProperties = new Dictionary<string, Expression>();
+        Dictionary<string, Expressions> externalProperties = new Dictionary<string, Expressions>();
         
         Dictionary<string, bool> Properties = new Dictionary<string, bool>();
         Properties.Add(TokenValues.name, false);
@@ -1356,7 +1356,7 @@ public class Parser
         string Path = "";
         List<Power> powers = new List<Power>();
         string Phrase = "";
-        Dictionary<string, Expression> externalProperties = Dictionary<string, Expression>();
+        Dictionary<string, Expressions> externalProperties = new Dictionary<string, Expressions>();
         
         Dictionary<string, bool> Properties = new Dictionary<string, bool>();
         Properties.Add(TokenValues.name, false);
@@ -1435,7 +1435,7 @@ public class Parser
         string Path = "";
         List<Power> powers = new List<Power>();
         Cards.location Position = Cards.location.Support;
-        Dictionary<string, Expression> externalProperties = new Dictionary<string, Expression>();
+        Dictionary<string, Expressions> externalProperties = new Dictionary<string, Expressions>();
         
         Dictionary<string, bool> Properties = new Dictionary<string, bool>();
         Properties.Add(TokenValues.name, false);

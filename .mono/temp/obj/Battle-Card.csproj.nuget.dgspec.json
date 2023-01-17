@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/Battle-Card.csproj": {}
+  },
+  "projects": {
+    "/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/Battle-Card.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/Battle-Card.csproj",
+        "projectName": "Battle-Card",
+        "projectPath": "/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/Battle-Card.csproj",
+        "packagesPath": "/home/ernst/.nuget/packages/",
+        "outputPath": "/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ernst/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

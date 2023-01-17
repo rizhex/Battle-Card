@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "gAFdpEO8bfbblJOwearGrC8kfmMXJTQwh5Veurj0oxOMdRdgRS9Uafb9Rk8vAbOkG0vpbNqLZQbCNUuyp5F+Cg==",
+  "success": true,
+  "projectFilePath": "/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/Battle-Card.csproj",
+  "expectedPackageFiles": [
+    "/home/ernst/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "/home/ernst/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

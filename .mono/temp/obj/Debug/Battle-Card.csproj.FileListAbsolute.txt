@@ -1,0 +1,7 @@
+/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/.mono/temp/obj/Debug/Battle-Card.csproj.AssemblyReference.cache
+/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/.mono/temp/obj/Debug/Battle-Card.GeneratedMSBuildEditorConfig.editorconfig
+/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/.mono/temp/obj/Debug/Battle-Card.csproj.CoreCompileInputs.cache
+/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/.mono/temp/bin/Debug/Battle-Card.dll
+/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/.mono/temp/bin/Debug/Battle-Card.pdb
+/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/.mono/temp/obj/Debug/Battle-Card.dll
+/home/ernst/Documents/Proyecto 2do Semestre/Battle-Card/.mono/temp/obj/Debug/Battle-Card.pdb
