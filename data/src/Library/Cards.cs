@@ -28,7 +28,7 @@ public class UnitCard : Cards
     public string phrase { get; protected set; }
     public location position { get; set; }
     public ArithmeticExpressions damage { get; protected set; }
-    public List<Expressions> External{get; private set;}
+    public Dictionary<string,Expressions> External{get; private set;}
     public UnitCard(string Name, string Type, string ImagePath, List<Power> Powers, string Phrase, location Position , ArithmeticExpressions Damage)
     {
         this.name = Name;
@@ -39,7 +39,7 @@ public class UnitCard : Cards
         this.position = Position;
         this.damage = Damage;
     }
-    public UnitCard(string Name, string Type, string ImagePath, List<Power> Powers, string Phrase, location Position , ArithmeticExpressions Damage, List<Expressions> external)
+    public UnitCard(string Name, string Type, string ImagePath, List<Power> Powers, string Phrase, location Position , ArithmeticExpressions Damage, Dictionary<string, Expression> external)
     {
         this.name = Name;
         this.type = Type;
@@ -60,7 +60,7 @@ public class LeaderCard : Cards
     public override List<Power> powers { get; protected set; }
     public string phrase { get; protected set; }
     public override int identifier { get; set; }
-    public List<Expressions> External{get; private set;}
+    public Dictionary<string, Expression> External{get; private set;}
     public LeaderCard(string Name, string Type, string ImagePath, List<Power> Powers, string Phrase)
     {
         this.name = Name;
@@ -69,7 +69,7 @@ public class LeaderCard : Cards
         this.powers = Powers;
         this.phrase = Phrase;
     }
-    public LeaderCard(string Name, string Type, string ImagePath, List<Power> Powers, string Phrase, List<Expressions> external)
+    public LeaderCard(string Name, string Type, string ImagePath, List<Power> Powers, string Phrase, Dictionary<string, Expression> external)
     {
         this.name = Name;
         this.type = Type;
@@ -88,7 +88,7 @@ public class EffectCard : Cards
     public override List<Power> powers { get; protected set; }
     public location position { get; set; }
     public override int identifier { get; set; }
-    public List<Expressions> External{get; private set;}
+    public Dictionary<string, Expression> External{get; private set;}
 
     public EffectCard(string Name, string Type, string ImagePath, List<Power> Powers, location Position)
     {
@@ -98,7 +98,7 @@ public class EffectCard : Cards
         this.powers = Powers;
         this.position = Position;
     }
-    public EffectCard(string Name, string Type, string ImagePath, List<Power> Powers, location Position, List<Expressions> external)
+    public EffectCard(string Name, string Type, string ImagePath, List<Power> Powers, location Position, Dictionary<string, Expression> external)
     {
         this.name = Name;
         this.type = Type;

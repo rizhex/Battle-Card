@@ -1240,7 +1240,7 @@ public class Parser
         string Phrase = "";
         Cards.location Position = Cards.location.Melee;
         ArithmeticExpressions Damage = null;
-        List<Expressions> externalProperties = new List<Expressions>();
+        Dictionary<string, Expression> externalProperties = new Dictionary<string, Expression>();
         
         Dictionary<string, bool> Properties = new Dictionary<string, bool>();
         Properties.Add(TokenValues.name, false);
@@ -1276,13 +1276,13 @@ public class Parser
                 }
                 else
                 {
-                    externalProperties.Add(((ArithmeticExpressions)ParseExpression(expressiontype)));
+                    externalProperties.Add(property, ((ArithmeticExpressions)ParseExpression(expressiontype)));
                     if(!Stream.MoveNext(TokenValues.StatementSeparator)) throw new Exception("; expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
                 }
                 break;
 
                 case TokenValues.booleanexpression:
-                externalProperties.Add((BooleanExpresion)ParseExpression(expressiontype));
+                externalProperties.Add(property, (BooleanExpresion)ParseExpression(expressiontype));
                 if(!Stream.MoveNext(TokenValues.StatementSeparator)) throw new Exception("; expected in card {Stream.LookAhead().Location.CardName} in line {Stream.LookAhead().Location.Line}");
                 break;
 
@@ -1321,7 +1321,7 @@ public class Parser
                     }
                     break;
                     default:
-                    externalProperties.Add((TextExpression)ParseExpression(expressiontype));
+                    externalProperties.Add(property, (TextExpression)ParseExpression(expressiontype));
                     break;
                 }
                 break;
@@ -1356,7 +1356,7 @@ public class Parser
         string Path = "";
         List<Power> powers = new List<Power>();
         string Phrase = "";
-        List<Expressions> externalProperties = new List<Expressions>();
+        Dictionary<string, Expression> externalProperties = Dictionary<string, Expression>();
         
         Dictionary<string, bool> Properties = new Dictionary<string, bool>();
         Properties.Add(TokenValues.name, false);
@@ -1377,11 +1377,11 @@ public class Parser
             switch (expressiontype)
             {
                 case TokenValues.arithmeticexpression:                
-                externalProperties.Add(((ArithmeticExpressions)ParseExpression(expressiontype)));
+                externalProperties.Add(property, ((ArithmeticExpressions)ParseExpression(expressiontype)));
                 break;
 
                 case TokenValues.booleanexpression:
-                externalProperties.Add((BooleanExpresion)ParseExpression(expressiontype));
+                externalProperties.Add(property, (BooleanExpresion)ParseExpression(expressiontype));
                 break;
 
                 case TokenValues.textexpression:
@@ -1400,7 +1400,7 @@ public class Parser
                     Properties[property] = true;
                     break;                    
                     default:
-                    externalProperties.Add((TextExpression)ParseExpression(expressiontype));
+                    externalProperties.Add(property, (TextExpression)ParseExpression(expressiontype));
                     break;
                 }
                 break;
@@ -1435,7 +1435,7 @@ public class Parser
         string Path = "";
         List<Power> powers = new List<Power>();
         Cards.location Position = Cards.location.Support;
-        List<Expressions> externalProperties = new List<Expressions>();
+        Dictionary<string, Expression> externalProperties = new Dictionary<string, Expression>();
         
         Dictionary<string, bool> Properties = new Dictionary<string, bool>();
         Properties.Add(TokenValues.name, false);
@@ -1457,11 +1457,11 @@ public class Parser
             switch (expressiontype)
             {
                 case TokenValues.arithmeticexpression:                
-                externalProperties.Add(((ArithmeticExpressions)ParseExpression(expressiontype)));
+                externalProperties.Add(property, ((ArithmeticExpressions)ParseExpression(expressiontype)));
                 break;
 
                 case TokenValues.booleanexpression:
-                externalProperties.Add((BooleanExpresion)ParseExpression(expressiontype));
+                externalProperties.Add(property, (BooleanExpresion)ParseExpression(expressiontype));
                 break;
 
                 case TokenValues.textexpression:
@@ -1490,7 +1490,7 @@ public class Parser
                     }
                     break;
                     default:
-                    externalProperties.Add((TextExpression)ParseExpression(expressiontype));
+                    externalProperties.Add(property, (TextExpression)ParseExpression(expressiontype));
                     break;
                 }
                 break;
